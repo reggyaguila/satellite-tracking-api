@@ -1,0 +1,13 @@
+package demo.src.test.java.com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SatIntialApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
