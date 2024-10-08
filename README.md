@@ -20,15 +20,15 @@ Name
 Latitude
 longitude
 2. Core features:
-Satellite Entity and Data Model:
-Define a Satellite class:
+demo.Satellite Entity and Data Model:
+Define a demo.Satellite class:
 Long id
 String name
 Double latitude
 Double longitude
 Annotate with JPA annotations (@eEntity, @Id, @GeneratedValue)
 Repository Layer:
-Create a SatelliteRepository interface extending JpaRepository<Satellite, Long> to handle CRUD operations on the satellite data
+Create a SatelliteRepository interface extending JpaRepository<demo.Satellite, Long> to handle CRUD operations on the satellite data
 Service Layer:
 Implement a SatelliteService class to manage business logic
 Methods: getAllSatellites(), getSatelliteById(), addSatellite(), updateSatellite(), deleteSatellite()
