@@ -7,9 +7,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class TLEFetch {
+    HashMap<String, String> satelliteMap = new HashMap<String, String>();
 
-    public static void main(String[] args) {
-        HashMap<String, String> satelliteMap = new HashMap<String, String>();
+    public TLEFetch() {
+        OrekitInitializer.initOrekit();
+        satelliteMap = new HashMap<>();
+        fetchTLEData();
+    }
+
+    private void fetchTLEData() {
+
         try {
             String url = "https://celestrak.com/NORAD/elements/gp.php?GROUP=starlink&FORMAT=tle";
             URL obj = new URL(url);
@@ -51,11 +58,11 @@ public class TLEFetch {
             else {
                 System.out.println("GET request failed. Response Code: " + responseCode);
             }
-            System.out.println("Total satellites fetched: " + satelliteMap.size());
-
-            System.out.println(satelliteMap);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public HashMap<String, String> getSatelliteMap() {
+        return satelliteMap;
     }
 }
